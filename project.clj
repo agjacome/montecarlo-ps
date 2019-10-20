@@ -1,8 +1,9 @@
-(defproject montecarlo-ps "0.1.0-SNAPSHOT"
+(defproject montecarlo-ps :project/git-ref-short
+  :plugins [[me.arrdem/lein-git-version "2.0.8"]]
+
   :description "Montecarlo estimation project"
-  :url "http://github.com/agjacome/montecarlo-ps"
-  :license { :name "MIT"
-             :url "https://opensource.org/licenses/MIT" }
+  :license {:name "MIT" :url "https://opensource.org/licenses/MIT"}
+
   :dependencies [[org.clojure/clojure "1.10.0"]]
-  :repl-options {:init-ns montecarlo-ps.core}
+
   :main montecarlo-ps.core)
