@@ -2,12 +2,16 @@ montecarlo-ps
 =============
 
 [![Build Status](https://travis-ci.com/agjacome/montecarlo-ps.svg?branch=master)](https://travis-ci.com/agjacome/montecarlo-ps)
+[![Heroku Status](https://heroku-badge.herokuapp.com/?app=montecarlo-ps)](http://montecarlo-ps.herokuapp.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Side project in very early stages. Its purpose is to provide a web interface
-over a simple MonteCarlo simulation estimations for projects, based upon
+over a simple task estimation algorithm based upon Montecarlo simulations and
 historical JIRA data.
+
+Current production website can be accessed through [montecarlo-ps in
+Heroku](http://montecarlo-ps.herokuapp.com).
 
 #### How to run and develop locally
 
