@@ -6,7 +6,8 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [compojure           "1.6.1" ]
                  [environ             "1.1.0" ]
-                 [http-kit            "2.3.0" ]]
+                 [http-kit            "2.3.0" ]
+                 [selmer              "1.12.17"]]
 
   :profiles {:dev {:dependencies [[midje "1.9.9" :exclusions [org.clojure/clojure commons-codec]]]}}
 
