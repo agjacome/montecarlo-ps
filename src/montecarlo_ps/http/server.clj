@@ -3,10 +3,10 @@
             [compojure.route :refer [not-found]]
             [org.httpkit.server :as server]
             [environ.core :refer [env]]
-            [montecarlo-ps.http.hello-world :as hello-world]))
+            [montecarlo-ps.http.monte-carlo :as monte-carlo]))
 
 (defroutes routes
-  (context   "/" [] hello-world/routes)
+  (context   "/" [] monte-carlo/routes)
   (not-found "Resource Not Found"))
 
 (defn run []
