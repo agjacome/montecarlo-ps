@@ -2,10 +2,11 @@
   (:require [compojure.core :refer [GET, POST, defroutes]]
             [selmer.parser :refer [render-file]]
             [clojure.walk :refer [keywordize-keys]]
-            [ring.util.codec :refer [form-decode]]))
+            [ring.util.codec :refer [form-decode]]
+            [ring.util.request :refer [body-string]]))
 
 (defn- parse-form-data [request]
-  (keywordize-keys (form-decode (:body request))))
+  (keywordize-keys (form-decode (body-string request))))
 
 (defn form-page [request]
   {:status  200
