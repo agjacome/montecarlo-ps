@@ -1,4 +1,4 @@
-(ns montecarlo-ps.http.monte-carlo
+(ns montecarlo-ps.endpoints.form
   (:require [compojure.core :refer [GET, POST, defroutes]]
             [selmer.parser :refer [render-file]]
             [clojure.walk :refer [keywordize-keys]]
@@ -8,16 +8,16 @@
 (defn- parse-form-data [request]
   (keywordize-keys (form-decode (body-string request))))
 
-(defn form-page [request]
+(defn get-handler [request]
   {:status  200
    :headers {"Content-Type" "text/html"}
-   :body    (render-file "montecarlo_ps/http/form.html" {})})
+   :body    (render-file "montecarlo_ps/pages/form.html" {})})
 
-(defn form-page-submission [request]
+(defn post-handler [request]
   {:status  200
    :headers {"Content-Type" "text/html"}
-   :body    (render-file "montecarlo_ps/http/submitted_page.html" (parse-form-data request))})
+   :body    (render-file "montecarlo_ps/pages/results.html" (parse-form-data request))})
 
 (defroutes routes
-  (GET  "/"       [] form-page)
-  (POST "/submit" [] form-page-submission))
+  (GET  "/" [] get-handler)
+  (POST "/" [] post-handler))
