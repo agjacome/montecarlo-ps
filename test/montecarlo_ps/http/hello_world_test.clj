@@ -1,6 +1,6 @@
 (ns montecarlo-ps.http.hello-world-test
-  (:use midje.sweet)
-  (:require [montecarlo-ps.http.hello-world :as hello-world]))
+  (:require [midje.sweet :refer :all]
+            [montecarlo-ps.http.hello-world :as hello-world]))
 
 (defn- request
   ([]            (request :get   "/"))

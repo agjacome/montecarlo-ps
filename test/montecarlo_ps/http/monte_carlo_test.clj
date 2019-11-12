@@ -1,6 +1,6 @@
 (ns montecarlo-ps.http.monte-carlo-test
-  (:use midje.sweet)
   (:require [montecarlo-ps.http.monte-carlo :as monte-carlo]
+            [midje.sweet :refer :all]
             [selmer.parser :refer [render-file]]))
 
 (defn- request

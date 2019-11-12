@@ -11,11 +11,17 @@
 
   :profiles {:dev {:dependencies [[midje "1.9.9" :exclusions [org.clojure/clojure commons-codec]]]}}
 
-  :plugins [[lein-ancient               "0.6.15"]
+  :plugins [[jonase/eastwood            "0.3.5" ]
+            [lein-ancient               "0.6.15"]
             [lein-cljfmt                "0.6.5" ]
             [lein-midje                 "3.2.1" ]
             [me.arrdem/lein-git-version "2.0.8" ]]
 
-  :aliases {"test" ["do" ["cljfmt" "fix"] ["midje"]]}
+  :eastwood {:add-linters [:unused-fn-args :unused-locals :unused-namespaces :unused-private-vars]
+             :only-modified true}
+
+  :aliases {"format" ["cljfmt" "fix"]
+            "lint"   ["eastwood"]
+            "test"   ["do" ["format"] ["lint"] ["midje"]]}
 
   :main montecarlo-ps.main)
