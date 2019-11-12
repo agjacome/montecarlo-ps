@@ -2,7 +2,11 @@ language: clojure
 
 lein: 2.9.1
 
-script: lein midje
+script:
+  - lein cljfmt check
+  - lein kibit
+  - lein eastwood
+  - lein midje
 
 jdk:
   - openjdk11
