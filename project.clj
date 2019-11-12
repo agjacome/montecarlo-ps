@@ -18,7 +18,7 @@
             [lein-midje                 "3.2.1" ]
             [me.arrdem/lein-git-version "2.0.8" ]]
 
-  :eastwood {:add-linters [:unused-fn-args :unused-locals :unused-namespaces :unused-private-vars]
+  :eastwood {:add-linters [:unused-locals :unused-namespaces :unused-private-vars]
              :only-modified true}
 
   :aliases {"format" ["cljfmt" "fix"]
