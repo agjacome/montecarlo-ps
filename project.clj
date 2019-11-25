@@ -3,11 +3,12 @@
   :url "https://github.com/agjacome/montecarlo-ps/"
   :license {:name "MIT" :url "https://opensource.org/licenses/MIT"}
 
-  :dependencies [[org.clojure/clojure "1.10.1" ]
-                 [compojure           "1.6.1"  ]
-                 [environ             "1.1.0"  ]
-                 [http-kit            "2.3.0"  ]
-                 [selmer              "1.12.17"]]
+  :dependencies [[org.clojure/clojure       "1.10.1" ]
+                 [javax.servlet/servlet-api "2.5"    ]
+                 [compojure                 "1.6.1"  ]
+                 [environ                   "1.1.0"  ]
+                 [http-kit                  "2.3.0"  ]
+                 [selmer                    "1.12.17"]]
 
   :profiles {:dev {:dependencies [[midje "1.9.9" :exclusions [org.clojure/clojure commons-codec]]]}}
 

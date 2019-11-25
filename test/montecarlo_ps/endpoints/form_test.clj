@@ -15,9 +15,4 @@
              (let [response (form/post-handler {:body "startDate=test"})]
                (:status response) => 200
                (:headers response) => {"Content-Type" "text/html"}
-               (:body response) => "<h1>Start date: test</h1>
-                <div> Persona, ComidaPreferida
-                      Alberto, Cemento
-                      Tom, Chocolate
-                      Susan, Pasta
-                      Nuria, Arroz </div>")))
+               (:body response) => "<h1>Start date: test</h1>")))
