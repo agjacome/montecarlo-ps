@@ -14,7 +14,7 @@
 (facts "about `form/post-handler`"
        (fact "it returns an OK response if the request contains the expected fields"
              (let [csv-file (io/resource "montecarlo_ps/example.csv")
-                   request  {:params {"startDate" "test" "csv" {:tempfile csv-file}}}
+                   request  {:params {:startDate "test" :csv {:tempfile csv-file}}}
                    response (form/post-handler request)]
                (:status  response) => 200
                (:headers response) => {"Content-Type" "text/html"}

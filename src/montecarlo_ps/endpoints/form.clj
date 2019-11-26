@@ -8,9 +8,8 @@
    :body    (render-file "montecarlo_ps/pages/form.html" {})})
 
 (defn post-handler [request]
-  (let [request-params (:params request)
-        start-date     (request-params "startDate")
-        csv-content    (slurp (:tempfile (get request-params "csv")))]
+  (let [start-date  (-> request :params :startDate)
+        csv-content (-> request :params :csv :tempfile slurp)]
     {:status  200
      :headers {"Content-Type" "text/html"}
      :body    (render-file "montecarlo_ps/pages/results.html" {:content csv-content :startDate start-date})}))
