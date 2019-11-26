@@ -10,9 +10,12 @@
    :body    (render-file "montecarlo_ps/pages/form.html" {})})
 
 (defn post-handler [request]
-  {:status  200
-   :headers {"Content-Type" "text/html"}
-   :body    (render-file "montecarlo_ps/pages/results.html" {:content (slurp (:tempfile (get (:params request) "csv"))) :startDate (get (:params request) "startDate")})})
+  (let [request-params (:params request)
+        start-date     (get request-params "startDate")
+        csv-content    (slurp (:tempfile (get request-params "csv")))]
+    {:status  200
+     :headers {"Content-Type" "text/html"}
+     :body    (render-file "montecarlo_ps/pages/results.html" {:content csv-content :startDate start-date})}))
 
 (defroutes routes
   (GET "/" [] get-handler)
