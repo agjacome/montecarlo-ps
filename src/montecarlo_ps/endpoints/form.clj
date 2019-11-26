@@ -11,8 +11,8 @@
 
 (defn post-handler [request]
   (let [request-params (:params request)
-        start-date     (get request-params "startDate")
-        csv-content    (slurp (:tempfile (get request-params "csv")))]
+        start-date     (request-params "startDate")
+        csv-content    (slurp (:tempfile (request-params "csv")))]
     {:status  200
      :headers {"Content-Type" "text/html"}
      :body    (render-file "montecarlo_ps/pages/results.html" {:content csv-content :startDate start-date})}))
