@@ -4,11 +4,13 @@
   :license {:name "MIT" :url "https://opensource.org/licenses/MIT"}
 
   :dependencies [[org.clojure/clojure       "1.10.1" ]
+                 [org.clojure/data.csv      "0.1.2"]
                  [javax.servlet/servlet-api "2.5"    ]
                  [compojure                 "1.6.1"  ]
                  [environ                   "1.1.0"  ]
                  [http-kit                  "2.3.0"  ]
-                 [selmer                    "1.12.17"]]
+                 [selmer                    "1.12.17"]
+                 [clj-time                  "0.15.2"]]
 
   :profiles {:dev {:dependencies [[midje "1.9.9" :exclusions [org.clojure/clojure commons-codec]]]}}
 
